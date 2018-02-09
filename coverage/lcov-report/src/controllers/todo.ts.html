@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/controllers/todo.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/controllers</a> todo.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.07% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>7/58</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.07% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>7/58</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Request, Response } from "express";
+import { default as TodoItem, TodoModel } from "../models/mongo/TodoItem";
+import { Document } from "mongoose";
+&nbsp;
+/**
+ * GET /todos
+ * todos api endpoint
+ */<span class="fstat-no" title="function not covered" ></span>
+expo<span class="cstat-no" title="statement not covered" >rt let getTodos = (req: Requ<span class="fstat-no" title="function not covered" >es</span>t, res: Response) =&gt; {</span>
+    Todo<span class="cstat-no" title="statement not covered" >Item.find({}, (err: any, product: Document[]) =&gt; {</span>
+        if (<span class="cstat-no" title="statement not covered" >err) res.send(e</span>rr);
+        else res.send(product);
+    });<span class="cstat-no" title="statement not covered" ></span>
+};
+&nbsp;
+export let getTodoItem<span class="fstat-no" title="function not covered" > =</span> (req: Request, res: Response) =&gt; {
+<span class="cstat-no" title="statement not covered" >    req.checkParams("id", "must include a valid mongo id in the request parameter").isMongoId();</span>
+    const errors = <span class="cstat-no" title="statement not covered" >req.validationErrors();</span>
+<span class="cstat-no" title="statement not covered" ></span>
+    if (<span class="cstat-no" title="statement not covered" >errors)</span>
+        res.send(errors).status(400);
+    else<span class="cstat-no" title="statement not covered" > {<span class="fstat-no" title="function not covered" ></span></span>
+        Todo<span class="cstat-no" title="statement not covered" >Item.findOne({ _id: req.params.id }, (err: any, product: Document) =&gt; {</span>
+            if (<span class="cstat-no" title="statement not covered" >err) res.send(e</span>rr);
+            else {
+<span class="cstat-no" title="statement not covered" >                if (!product)</span>
+<span class="cstat-no" title="statement not covered" >                    res.send(`todo item with ${req.params.id} not found`).status(404);</span>
+                else
+<span class="cstat-no" title="statement not covered" >                    res.send(product);</span>
+            }
+        });
+    }
+};
+<span class="fstat-no" title="function not covered" ></span>
+expo<span class="cstat-no" title="statement not covered" >rt let postTodoItem = (req: Request, res: Response) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    req.checkBody("description", "must include a field in the body named 'description'</span>").exists();
+    req.checkBody("<span class="cstat-no" title="statement not covered" >description", "field 'd</span>escription' must not be empty").notEmpty();
+<span class="cstat-no" title="statement not covered" ></span>
+    cons<span class="cstat-no" title="statement not covered" >t errors = req.validationError</span>s();
+&nbsp;
+    if (errors)<span class="cstat-no" title="statement not covered" ></span>
+        res.send(errors).status(400);
+    else {
+        const todoItem = new TodoItem({
+<span class="cstat-no" title="statement not covered" >            descriptio<span class="fstat-no" title="function not covered" >n:</span> req.body.description,</span>
+<span class="cstat-no" title="statement not covered" >            completed: (req.body.completed) ? req.body.completed : false</span>
+        });<span class="cstat-no" title="statement not covered" ></span>
+        todoItem.save((err: any, product: Document, numAffected: number) =&gt; {
+            if (<span class="cstat-no" title="statement not covered" >err) res.send(err);</span>
+            else res.send(product);
+        });
+    }
+};<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+export let putTodoI<span class="cstat-no" title="statement not covered" >tem = (req: Request, re</span>s: Response) =&gt; {
+    req.checkParams("i<span class="cstat-no" title="statement not covered" >d", "must include a valid mongo id in the request parameter").</span>isMongoId();
+<span class="cstat-no" title="statement not covered" >    const errors = req.validationErrors();</span>
+<span class="cstat-no" title="statement not covered" ></span>
+    const<span class="cstat-no" title="statement not covered" > bodyValid: boolean = (!req.body.description &amp;&amp; !req.body.completed) ? false : true;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+    if (errors)
+<span class="cstat-no" title="statement not covered" >        res.send(errors).status(400);</span>
+    else if <span class="cstat-no" title="statement not covered" >(!bodyValid) {</span>
+<span class="cstat-no" title="statement not covered" >        let paramErrorString: string = "";</span>
+        // T<span class="cstat-no" title="statement not covered" >ODO: come back to this - its like a cod</span>ing interview thing
+<span class="cstat-no" title="statement not covered" >        if (!req.body.description) paramErrorString += "body.description ";</span>
+        if (!req.body.completed) paramErrorString += "body.completed ";
+&nbsp;
+        res.send({
+            "location": "body",
+            "param": paramErrorString,
+            "msg": "must include a description or completed in the request body",
+            "value": req.body
+        }).status(400);<span class="cstat-no" title="statement not covered" ></span>
+    }
+    else {
+        const todoItem: object = {
+<span class="cstat-no" title="statement not covered" >            description: (req.body.description) ? req.body.description<span class="fstat-no" title="function not covered" > :</span> undefined,</span>
+<span class="cstat-no" title="statement not covered" >            completed: (req.body.completed) ? req.body.completed : undefined</span>
+        };<span class="cstat-no" title="statement not covered" ></span>
+        TodoItem.findByIdAndUpdate(req.params.id, todoItem, (err: any, product: Document) =&gt; {
+            if (<span class="cstat-no" title="statement not covered" >err) res.send(err);</span>
+            else res.send().status(200);
+        });
+    }
+};<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+export let deleteTo<span class="cstat-no" title="statement not covered" >doItem = (req: Request,</span> res: Response) =&gt; {
+<span class="cstat-no" title="statement not covered" >    req.checkParams("id", "must include a valid mongo id in the request parameter").isMongoId();</span>
+    cons<span class="cstat-no" title="statement not covered" >t errors = req.validationError</span>s();
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+    if (erro<span class="cstat-no" title="statement not covered" >rs)</span>
+        res.send<span class="cstat-no" title="statement not covered" >(errors).status</span>(400);
+    else {<span class="cstat-no" title="statement not covered" ></span>
+        TodoItem<span class="cstat-no" title="statement not covered" >.findOneAndRemove({ _id: req.params.id }, (err: any, product: Docum</span>ent) =&gt; {
+            if (err) res.send(err);
+            if (<span class="cstat-no" title="statement not covered" >!product)</span>
+                res.send(`todo item with ${req.params.id} not found`).status(404);
+            else
+                res.send().status(204);
+        });
+    }
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Feb 08 2018 00:03:54 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

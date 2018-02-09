@@ -23,9 +23,11 @@ import * as homeController from "./controllers/home";
 import * as userController from "./controllers/user";
 import * as apiController from "./controllers/api";
 import * as contactController from "./controllers/contact";
-import * as testController from "./controllers/test";
-import * as todoController from "./controllers/todo";
+import * as songController from "./controllers/song";
+// import * as todoController from "./controllers/todo/todo";
+import * as testController from "./controllers/test/test.controller";
 
+import * as router from "./app.router";
 
 // API keys and Passport configuration
 import * as passportConfig from "./config/passport";
@@ -87,46 +89,12 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, "public"), { maxAge: 31557600000 }));
 
 /**
- * Primary app routes.
- */
-app.get("/", homeController.index);
-app.get("/login", userController.getLogin);
-app.post("/login", userController.postLogin);
-app.get("/logout", userController.logout);
-app.get("/forgot", userController.getForgot);
-app.post("/forgot", userController.postForgot);
-app.get("/reset/:token", userController.getReset);
-app.post("/reset/:token", userController.postReset);
-app.get("/signup", userController.getSignup);
-app.post("/signup", userController.postSignup);
-app.get("/contact", contactController.getContact);
-app.post("/contact", contactController.postContact);
-app.get("/account", passportConfig.isAuthenticated, userController.getAccount);
-app.post("/account/profile", passportConfig.isAuthenticated, userController.postUpdateProfile);
-app.post("/account/password", passportConfig.isAuthenticated, userController.postUpdatePassword);
-app.post("/account/delete", passportConfig.isAuthenticated, userController.postDeleteAccount);
-app.get("/account/unlink/:provider", passportConfig.isAuthenticated, userController.getOauthUnlink);
-
-/**
- * API examples routes.
- */
-app.get("/api", apiController.getApi);
-app.get("/api/facebook", passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.getFacebook);
-
-/**
  * test examples routes.
  */
-app.get("/test", testController.getTest);
-app.post("/test", testController.postTest);
+app.get("/song", songController.getTest);
+app.post("/song", songController.postTest);
 
-/**
- * todos routes.
- */
-app.get("/todos", todoController.getTodos);
-app.post("/todo", todoController.postTodoItem);
-app.get("/todo/:id", todoController.getTodoItem);
-app.put("/todo/:id", todoController.putTodoItem);
-app.delete("/todo/:id", todoController.deleteTodoItem);
+
 
 
 /**
@@ -136,5 +104,8 @@ app.get("/auth/facebook", passport.authenticate("facebook", { scope: ["email", "
 app.get("/auth/facebook/callback", passport.authenticate("facebook", { failureRedirect: "/login" }), (req, res) => {
   res.redirect(req.session.returnTo || "/");
 });
+
+// bootstrap routes to app
+app.use("/api", router);
 
 module.exports = app;
