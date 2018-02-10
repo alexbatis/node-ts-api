@@ -1,5 +1,5 @@
 
-import { ABError } from "../../models/ABError";
+import { ABError } from "../models/ABError";
 export let handleTodoError = (err: any, message?: string, status?: number): ABError => {
     return new ABError({
         message : (message) ? message : null,

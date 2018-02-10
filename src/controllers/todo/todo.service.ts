@@ -6,7 +6,7 @@ import { ABError } from "../../models/ABError";
 import { Request } from "express";
 import { MappedError } from "express-validator/shared-typings";
 import * as todoRequestValidator from "../request-validators/todo.req-validate";
-import * as errorHandler from "../error-handlers/errorHandlers";
+import * as errorHandler from "../../error-handlers/errorHandlers";
 
 /* GET /todos */
 export let getTodos = (): Promise<Document[]> => {
